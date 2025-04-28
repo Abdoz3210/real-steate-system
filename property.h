@@ -18,6 +18,6 @@ public:
 	void postAdd(int area, float price, string title, string location, int property_id);
 	void view_my_adds();
 
-
+		
 };
 
