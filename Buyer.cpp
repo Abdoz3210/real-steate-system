@@ -46,7 +46,9 @@ public:
 		cin >> property_type;
 		
 	}
-	void searchBypricerange (int MinNum, int MaxNum) {}
+	void searchBypricerange (int MinNum, int MaxNum) {
+		
+	}
 	void searchBytitle(string title ) {}
 	void fillter(int MinNum, int MaxNum, string location, string property_type ) {}
 
