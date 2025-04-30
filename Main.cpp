@@ -2,13 +2,15 @@
 #include"admin.h"
 #include"Buyer.h"
 #include"property.h"
+#include<vector>
 
 using namespace std;
 
-void mainMenu() {
-	
-}
 int main() {
-	int optionsVariable;
+	int intagerOptionsVariable;
+	string stringOptionsVariable;
+	
+
+
 
 }
