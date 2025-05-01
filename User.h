@@ -4,10 +4,10 @@
 
 class User
 {
-	int MinNum;
-	int MaxNum;
-	string location;
-	string property_type;
+	
+	string userId, userName, phonNumber, Email;
+	
+	
 public:
 	void listProperties();
 	void propertyComparison(Buyer b1, Buyer b2, Buyer b3, Buyer b4);
