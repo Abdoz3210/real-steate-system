@@ -1,35 +1,51 @@
 #pragma once
 #include <iostream>
-#include<string>
+#include <string>
+#include <vector>
+#include <queue>
 
-class Property{
+class Property {
 private:
-	string location;
-	string propertyType;
-	string title;
-	string propertyId;
-	//float price;
-	int area;
+    std::string location;
+    std::string propertyType;
+    std::string title;
+    std::string propertyId;
+    float price;
+    int area;
 public:
-	Property();
-	//Property(int area, float price, string location, string title, string propertyid);
-	~Property();
+    int id;
+    std::string status;
 
-	void setPrice(int newPrice);
-	void setPropertyArea(int area);
-	void setPropertyId(string ID);
-	void setPropertyTitle(string title);
-	void setPropertyLocation(string location);
-	int getArea();
-	int getPrice();
-	string getLocation();
-	string getTitle();
+    Property();
+    Property(int area, float price, std::string location, std::string title, std::string propertyid, std::string propertyType);
+    Property(int id, const std::string& status = "Pending")
+        : id(id), status(status) {}
+    ~Property();
 
-	void addPost(/*pass DS that containt Propertys*/);
-	void editPost(int optionsVariable, string stringOptionsVariable /*pass DS that containt Propertys*/);
-	void deletePost(string propertyId /*pass DS that containt Propertys*/);
-	void viewMyPosts(/*pass DS that containt Propertys*/);
+    void setPrice(int newPrice);
+    void setPropertyArea(int area);
+    void setPropertyId(std::string ID);
+    void setPropertyTitle(std::string title);
+    void setPropertyLocation(std::string location);
+    int getArea();
+    float getPrice();
+    std::string getLocation();
+    std::string getTitle();
 
-		
+    // Static containers for all properties
+    static std::vector<Property> savedProperties;
+    static std::queue<Property> rejectedProperties;
+
+    static void addPost(); // Declare static method
+    static void editPost();
+    static void deletePost();
+    static void viewMyPosts();
+    static void rejectProperty(const Property& prop);
+    static void approveNextProperty();
+    static void discardNextProperty();
+
+	static void savePropertiesToFile(const std::string& filename);
+    static void loadPropertiesFromFile(const std::string& filename);
+	
 };
 

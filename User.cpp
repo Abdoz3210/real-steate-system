@@ -1,7 +1,9 @@
 #include "User.h"
+#include "Property.h"
 #include<iostream>
 #include <string>
-
+#include "Buyer.h"
+#include <queue>
 using namespace std;
 
 	
@@ -38,8 +40,26 @@ void User::searchBypricerange (int MinNum, int MaxNum) {
 		
 }
 void User::searchBytitle(string title ) {}
-void User::fillter(int MinNum, int MaxNum, string location, string property_type ) {}
-
+void User::fillter(int MinNum, int MaxNum, string location, string property_type ) {
+	// Example implementation
+	cout << "Filtering properties based on criteria:\n";
+	cout << "Price Range: " << MinNum << " - " << MaxNum << "\n";
+	cout << "Location: " << location << "\n";
+	cout << "Property Type: " << property_type << "\n";
+	
+}
 void Display(queue<Property> resulte) {
+	cout << "Displaying properties in the queue:\n";
+	while (!resulte.empty()) {
+		Property prop = resulte.front();
+		cout << "Property ID: " << prop.id << ", Status: " << prop.status << endl;
+		resulte.pop();
+	}
 
+}
+
+void User::listProperties() {
+    // Example implementation
+    std::cout << "Listing properties for user: " << name << std::endl;
+    // Add your logic here
 }

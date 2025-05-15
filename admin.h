@@ -30,25 +30,3 @@ public:
 
 #endif
 
-//i need from user.h 
-
-//struct User {
-//    int id;
-//    string name;
-//    bool isActive;
-//
-//    User(int i, const std::string& n, bool active = true)
-//        : id(i), name(n), isActive(active) {
-//    }
-//};
-
-// and from property.h
-//struct Property {
-//    int id;
-//    string status; // e.g., "Pending", "Approved", "Rejected"
-//
-//    Property(int i, const std::string& s = "Pending")
-//        : id(i), status(s) {
-//    }
-//};
-

@@ -14,7 +14,7 @@ Admin::Admin() {
 }
 
 Admin::~Admin() {
-	delete[] users; // Assuming users is dynamically allocated, otherwise this line is not needed
+    // No manual deletion needed for std::vector<User>
 }
 
 void Admin::AdminMenu() {
@@ -72,6 +72,14 @@ void Admin::manageList() {
     case 2: rejectProperty(pid); break;
     case 3: deleteProperty(pid); break;
     default: cout << "Invalid action.\n";
+    }
+
+    cout << "Choose: 1. Approve next pending  2. Discard next pending\n";
+    cin >> action;
+    switch (action) {
+        case 1: Property::approveNextProperty(); break;
+        case 2: Property::discardNextProperty(); break;
+        default: cout << "Invalid action.\n";
     }
 }
 
